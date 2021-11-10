@@ -1,0 +1,33 @@
+diff --git a/conda.yaml b/conda.yaml
+index f2b9bf1..2d6d38c 100644
+--- a/conda.yaml
++++ b/conda.yaml
+@@ -5,6 +5,5 @@ dependencies:
+   - numpy>=1.14.3
+   - pandas>=1.0.0
+   - scikit-learn=0.19.1
+-  - pip
+   - pip:
+     - mlflow
+diff --git a/conda.yaml b/conda.yaml
+index f2b9bf1..2d6d38c 100644
+--- a/conda.yaml
++++ b/conda.yaml
+@@ -5,6 +5,5 @@ dependencies:
+   - numpy>=1.14.3
+   - pandas>=1.0.0
+   - scikit-learn=0.19.1
+-  - pip
+   - pip:
+     - mlflow
+diff --git a/conda.yaml b/conda.yaml
+index f2b9bf1..2d6d38c 100644
+--- a/conda.yaml
++++ b/conda.yaml
+@@ -5,6 +5,5 @@ dependencies:
+   - numpy>=1.14.3
+   - pandas>=1.0.0
+   - scikit-learn=0.19.1
+-  - pip
+   - pip:
+     - mlflow
