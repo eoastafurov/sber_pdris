@@ -1,0 +1,49 @@
+---
+- name: Install Nginx
+  hosts: all
+  become: yes
+  
+  vars:
+    working_directory: ./
+
+  tasks:
+    - block: ###### CentOS #####
+      - name: Install Nginx
+        yum: name=nginx state=latest
+        notify: restart nginx
+      - name: Install Python3 for CentOS
+        yum: name=python3 state=latest
+      - name: install pip3
+        yum: name=python3-pip state=present 
+      - name: Install packages
+        pip:
+          name: numpy
+      when: ansible_os_family == "RedHat"
+      
+
+    - block: ##### Debian #####
+      - name: Install Nginx
+        apt: name=nginx state=latest
+        notify: restart nginx
+      - name: Install Python3 for Debian
+        apt: name=python3 state=latest
+      - name: install pip3
+        apt: name=python3-pip state=present 
+      - name: Install packages
+        pip:
+          name: numpy
+      when: ansible_os_family == "Debian"
+    
+    
+    ##### Code #####
+    - name: Make code executable 
+      ansible.builtin.shell:
+        cmd: chmod ugo +rwx numpy_script.py
+        chdir: "{{ working_directory }}"
+
+    - name: Run code
+      ansible.builtin.shell:
+        cmd: python3 script.py
+        chdir: "{{ working_directory }}"
+
+...

@@ -1,0 +1,10 @@
+[centos-group]
+centOS ansible_ssh_host=194.87.57.31 ansible_ssh_port=2222
+
+[debian-group]
+debian ansible_host=194.87.107.68 ansible_ssh_port=2222
+
+[all:vars]
+ansible_ssh_user=mftiedu
+ansible_ssh_pass=cHONtic
+ansible_sudo_pass=cHONtic
