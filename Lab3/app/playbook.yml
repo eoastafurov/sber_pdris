@@ -5,13 +5,11 @@
   become: no
   
   tasks:
-    - block:
-      - name: Java CentOS
-        yum: update_cache=yes name=java-1.8.0-openjdk-devel state=latest
-        when: ansible_os_family == "RedHat"
-      - name: Java Debian
-        apt: update_cache=yes name=openjdk-8-jdk-headless state=latest
-        when: ansible_os_family == "Debian"
-      when: java_version.stdout == "" or java_version.stdout is version('1.8', '<')
-      become: yes
+    - name: Java CentOS
+      yum: update_cache=yes name=java-1.8.0-openjdk-devel state=latest
+      when: ansible_os_family == "RedHat"
+    - name: Java Debian
+      apt: update_cache=yes name=openjdk-8-jdk-headless state=latest
+      when: ansible_os_family == "Debian"
+      
 ...
