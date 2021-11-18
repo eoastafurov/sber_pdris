@@ -4,8 +4,11 @@ node {
         url: 'https://github.com/eoastafurov/sber_pdris.git'
     }
 
+    stage('mv') {
+        sh 'mv ./Lab3/app/app.iml ./Lab3/app/holding.json ./Lab3/app/individual.json ./Lab3/app/inventory.hosts ./Lab3/app/legal_entity.json ./Lab3/app/playbook.yml ./Lab3/app/pom.xml ./Lab3/app/sonar.properties ./Lab3/app/src .'
+    }
+
     stage('Build') {
-        sh 'mv ./Lab3/app/* .'
         sh 'mvn clean package'
     }
 }
