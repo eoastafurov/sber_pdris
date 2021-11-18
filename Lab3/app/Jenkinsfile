@@ -4,7 +4,7 @@ node {
         url: 'https://github.com/eoastafurov/sber_pdris.git'
     }
 
-    stage('mv') {
+    stage('change dir') {
         sh 'cd Lab3/app'
     }
 
