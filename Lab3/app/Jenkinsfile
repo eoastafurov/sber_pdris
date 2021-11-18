@@ -5,7 +5,7 @@ node {
     }
 
     stage('Build') {
-        sh 'mv ./"Lab3/app"/* .'
+        sh 'mv ./Lab3/app/* .'
         sh 'mvn clean package'
     }
 }
