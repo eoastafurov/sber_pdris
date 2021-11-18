@@ -1,0 +1,31 @@
+node {
+    stage('Clone') {
+        git branch: 'main',
+        url: 'https://github.com/eoastafurov/sber_pdris.git'
+    }
+
+    stage('Build') {
+        sh 'mv ./"Lab3/app"/* .'
+        sh 'mvn clean package'
+    }
+
+    stage('sonar_qube') {
+        def scannerHome = tool 'MySonar';
+        withSonarQubeEnv('MySonar') {
+            sh "${scannerHome}/bin/sonar-scanner"
+        }
+    }
+    stage('allure') {
+        allure([
+                includeProperties: false,
+                jdk: '',
+                properties: [],
+                reportBuildPolicy: 'ALWAYS',
+                results: [[path: 'java/target/allure-results']]
+            ])
+    }
+    stage('deploy') {
+        ansiblePlaybook(inventory: 'inventory.hosts', 
+                        playbook: 'playbook.yml')
+    }
+}
