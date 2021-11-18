@@ -8,6 +8,9 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
+        <maven-surefire-plugin.version>3.0.0-M4</maven-surefire-plugin.version>
+        <aspectj.version>1.9.6</aspectj.version>
+        <allure-junit4.version>2.16.1</allure-junit4.version>
     </properties>
 
     <groupId>org.example</groupId>
@@ -33,8 +36,8 @@
         </dependency>
         <dependency>
             <groupId>io.qameta.allure</groupId>
-            <artifactId>allure-generator</artifactId>
-            <version>2.16.1</version>
+            <artifactId>allure-junit4</artifactId>
+            <version>${allure-junit4.version}</version>
         </dependency>
     </dependencies>
 
