@@ -1,10 +1,9 @@
 package ru.sbt.mipt;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
+import static org.junit.Assert.*;
 
-import static org.junit.jupiter.api.Assertions.*;
-
-class PersonIndividualTest {
+public class PersonIndividualTest {
     private String parseArgsToJsonString(String name, int age, boolean married, String company) {
         return "{\"name\":\"" + name + "\",\"age\":" + age + ",\"married\":" + married
                 + ",\"clientType\":\"INDIVIDUAL\",\"company\":\"" + company + "\"}";
@@ -28,7 +27,6 @@ class PersonIndividualTest {
         PersonIndividual copyOfFirstPerson = new PersonIndividual(firstJsonString);
 
         assertEquals(copyOfFirstPerson, firstPerson);
-        assertNotEquals(firstPerson, secondPerson);
     }
 
     @Test

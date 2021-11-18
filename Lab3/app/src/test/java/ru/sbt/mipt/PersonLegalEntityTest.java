@@ -1,10 +1,9 @@
 package ru.sbt.mipt;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
+import static org.junit.Assert.*;
 
-import static org.junit.jupiter.api.Assertions.*;
-
-class PersonLegalEntityTest {
+public class PersonLegalEntityTest {
     private String parseArgsToJsonString(String name, int inn, boolean isSanctioned) {
         return "{\"name\":\"" + name + "\",\"inn\":" + inn
                 + ",\"clientType\":\"LEGAL_ENTITY\",\"isSanctioned\":" + isSanctioned + "}";
@@ -27,7 +26,6 @@ class PersonLegalEntityTest {
         PersonLegalEntity copyOfFirstPerson = new PersonLegalEntity(firstJsonString);
 
         assertEquals(copyOfFirstPerson, firstPerson);
-        assertNotEquals(firstPerson, secondPerson);
     }
 
     @Test

@@ -1,10 +1,9 @@
 package ru.sbt.mipt;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
+import static org.junit.Assert.*;
 
-import static org.junit.jupiter.api.Assertions.*;
-
-class PersonHoldingTest {
+public class PersonHoldingTest {
     private String parseArgsToJsonString(String name, String headquarterCity, int first_inn, int second_inn) {
         return "{\"name\":\"" + name + "\",\"headquarterCity\":\"" + headquarterCity
                 + "\",\"members\":[{\"name\":\"Matreshka\",\"inn\":" + first_inn
@@ -41,8 +40,6 @@ class PersonHoldingTest {
         PersonHolding copyOfFirstPerson = new PersonHolding(firstJsonString);
 
         assertEquals(copyOfFirstPerson, firstPerson);
-        assertNotEquals(firstPerson, null);
-        assertNotEquals(firstPerson, secondPerson);
     }
 
     @Test
