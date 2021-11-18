@@ -1,0 +1,19 @@
+{
+  "name": "PRTK",
+  "headquarterCity": "Moscow",
+  "members": [
+    {
+      "name": "Matreshka",
+      "inn": 13258872,
+      "clientType": "LEGAL_ENTITY",
+      "isSanctioned": true
+    },
+    {
+      "name": "Perekrestok",
+      "inn": 1362352,
+      "clientType": "LEGAL_ENTITY",
+      "isSanctioned": true
+    }
+  ],
+  "clientType": "HOLDING"
+}
