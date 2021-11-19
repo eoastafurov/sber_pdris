@@ -50,7 +50,7 @@
                         <manifest>
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>lib/</classpathPrefix>
-                            <mainClass>ru.sbt.mipt.PersonIndividual</mainClass>
+                            <mainClass>ru.sbt.mipt.Main</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
