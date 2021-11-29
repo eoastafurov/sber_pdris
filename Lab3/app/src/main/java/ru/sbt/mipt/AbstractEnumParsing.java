@@ -1,6 +1,5 @@
 package ru.sbt.mipt;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class AbstractEnumParsing implements Parsing {

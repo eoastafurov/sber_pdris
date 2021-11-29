@@ -3,8 +3,8 @@ package ru.sbt.mipt;
 import com.google.gson.Gson;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
-import java.util.Vector;
 
 public class PersonHolding implements Person{
     private final String name;
@@ -32,11 +32,11 @@ public class PersonHolding implements Person{
     public PersonHolding(
             String name,
             String headquarterCity,
-            ArrayList<PersonLegalEntity> members,
+            List<PersonLegalEntity> members,
             ClientType clientType) {
         this.name = name;
         this.headquarterCity = headquarterCity;
-        this.members = members;
+        this.members = (ArrayList<PersonLegalEntity>) members;
         this.clientType = clientType;
     }
 

@@ -10,6 +10,10 @@ import java.util.List;
 import java.util.Map;
 
 public class StringProcessing {
+    private StringProcessing() {
+        // nothing
+    }
+    
     public static List<String> getClientTypeAndJson(String path) {
         List<String> out = new ArrayList<>();
         try {
