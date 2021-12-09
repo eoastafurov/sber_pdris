@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: server-deployment
+  labels:
+    app: server
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: server
+  template:
+    metadata:
+      name: server
+      labels:
+        app: server
+    spec:
+      containers:
+      - name: server-docker
+        image: eoastafurov1/sber_server
+        ports:
+        - containerPort: 1234
